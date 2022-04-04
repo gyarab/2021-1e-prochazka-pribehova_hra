@@ -162,15 +162,15 @@ public class UserInput {
                 }
 
 
-            if (a == 1) {
-                content.getStory("rozhovor se starostou B,A,B_B");
-                buttons[0].setDisable(true);
-                buttons[1].setDisable(true);
-                buttons[2].setDisable(true);
-                buttons[3].setDisable(true);
-                buttons[4].setDisable(true);
-                //konec hry
-                break;
+                if (a == 1) {
+                    content.getStory("rozhovor se starostou B,A,B_B");
+                    buttons[0].setDisable(true);
+                    buttons[1].setDisable(true);
+                    buttons[2].setDisable(true);
+                    buttons[3].setDisable(true);
+                    buttons[4].setDisable(true);
+                    //konec hry
+                    break;
             }
         }
 
