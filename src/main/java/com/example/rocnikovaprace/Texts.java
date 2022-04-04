@@ -16,7 +16,7 @@ public class Texts {
         story = new HashMap<String, String>();
 
         story.put("Uvod", "Vzbudil jsi se z hlubokého spánku, ale stále se cítíš unaveně a především rozlámaně, protože jsi spal na dřevěné prkenné desce. Ale nejvíce tě bolí hlava zezadu. po chvíli bez výsledného vzpomínání co se stalo a proč jsi tady, se rozhlédneš kolem a zjistíš, že jsi v jakémsi vězení s jedním oknem s rezavými mřížemi a dřevěnými dveřmi. Velmi se podivíš při zjištění, že máš ruce od zaschlé krve." +
-                "\n \n Co budeš dělat dál?" +
+                "\n\n Co budeš dělat dál?" +
                 "\n\n A)  půjdeš si lehnout  " +
                 "\n\n B)  prohlédnout si okno " +
                 "\n\n C)  prohlédnout si dveře");
@@ -80,7 +80,10 @@ public class Texts {
                 "\n\n  Co odpovíš?" +
                 "\n\n A) omluvíš se, že ti je to líto a řekneš , že už se to nebude opakovat" +
                 "\n\n B) ");
-        story.put("rozhovor se starostou B_A","„Tak to rád slyším, protože já už tady nebudu ani minutu!” naštvaně vykřikuješ. Pan starosta vědom si své moci  klidným hlasem odpoví: „Pane Brown , jestli se ihned nezačnete chovat slušně a spolupracovat , tak to bude mít pro vás nemilé a možná trvalé následky, mohl byste si totiž prodloužit už tak vám tolik nepříjemný pobyt zde v cele a to vy přece nechcete nebo se mýlím?”");
+        story.put("rozhovor se starostou B_A","„Tak to rád slyším, protože já už tady nebudu ani minutu!” naštvaně vykřikuješ. Pan starosta vědom si své moci  klidným hlasem odpoví: „Pane Brown , jestli se ihned nezačnete chovat slušně a spolupracovat , tak to bude mít pro vás nemilé a možná trvalé následky, mohl byste si totiž prodloužit už tak vám tolik nepříjemný pobyt zde v cele a to vy přece nechcete nebo se mýlím?”" +
+                "\n\n Budeš spolupracovat s panem starostou?" +
+                "\n\n A) Ano" +
+                "\n\n B) Ne ");
         story.put("rozhovor se starostou B_B","„Promiňte pane starosto za mojí hrubost, ale jsem celý hladový a pořád zaskočený z této pro mě velice nepříjemné a neobvyklé situace.Budu opravdu moc rád když mě pustíte zpět na svobodu, slibuji , že už se mnou nebudou podobné problémy, pokusím se najít jiný způsob na léčbu hniloby.”\n" +
                 ",,Ale prosím vás,kdybych zavřel všechny doktory co tu máme , tak dopadneme jako v North Portu , to je to severní přístavní městečko kde se hniloba poprvé objevila,\" povídal starosta a trochu  se pousmíval, protože si myslel , že zde se pod jeho vedením nic takového nemůže stát.\n" +
                 "‚‚ A co že se jim stalo ?” zeptáš se . \n" +
@@ -88,6 +91,15 @@ public class Texts {
                 "");
         story.put("rozhovor se starostou A,B_A", "„To je mi líto , omlouvám se co jsem spáchal.Už se to nebude opakovat,” " +
                 "\n\nPan starosta klidným hlasem odpověděl: „No to doufám, ale nebojte teď vás pustíme zas tak něco hrozného se nestalo, mám pro tyhle věci  pochopení.” ");
+        story.put("rozhovor se starostou B,A_A","„Promiňte pane starosto za mojí hrubost, ale jsem celý hladový a pořád zaskočený z této pro mě velice nepříjemné a neobvyklé situace.Budu opravdu moc rád když mě pustíte zpět na svobodu, slibuji , že už se mnou nebudou podobné problémy, pokusím se najít jiný způsob na léčbu hniloby.");
+        story.put("rozhovor se starostou B,A_B","„Pane starosto, mám takový pocit , že mě vydíráte a zneužíváte své moci a postavení.Jak by se asi lidem líbilo, kdyby zjistili , že jeden z mála doktorů ve městě je zavřen a držen ve vězení? “\n" +
+                "„Nu dobrá, takže jste si vybral, špatně mimochodem,” odpověděl starosta a vytahoval velký svazek klíčů." +
+                "\n\n Pokusíš se o útěk?" +
+                "\n\n A) Ano" +
+                "\n\n B) Ne ");
+        story.put("rozhovor se starostou B,A,B_A","Vší silou jsi strčil do starosty,ten se svalil jako pytel brambor do rohu cely a otevřenými dveřmi jsi vyběhl do jakési chodby.V tom jse z cely ,ze které jsi bleskovým tempem vyletěl, ozve : „Stráže!” V tu chvíli dostaneš něčím po hlavě a omdlíš.\n" +
+                "Když jsi se konečně probral , k tvému zděšení jsi zjistil, že si zpět v té stejné cele, jen už ji teď hlídá stráž, zeptáš se ho na jakou dobu tu budeš a dozvíš se , že na dlouhých 20 let.");
+        story.put("rozhovor se starostou B,A,B_B","Starosta odešel z cely, zamkl za sebou a prohlásil : „ Třeba s vámi za 10 let bude větší domluva…”");
     }
 
 

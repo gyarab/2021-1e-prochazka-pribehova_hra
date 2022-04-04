@@ -106,14 +106,14 @@ public class UserInput {
                     gameStatus  = ROZHOVORSESTAROSTOUB_A;
                 }
                 if (a == 1){
-                    content.getStory("rozhovor se starostou B_A");
+                    content.getStory("rozhovor se starostou B_B");
                     buttons[2].setDisable(true);
                     buttons[3].setDisable(true);
                     buttons[4].setDisable(true);
-                    gameStatus  = ROZHOVORSESTAROSTOUB_A;
+                    gameStatus  = ROZHOVORSESTAROSTOUB_B;
                 }
                 break;
-                case ROZHOVORSESTAROSTOUA:
+            case ROZHOVORSESTAROSTOUA:
                 if (a == 0) {
                     content.getStory("rozhovor se starostou A_A");
                     buttons[2].setDisable(true);
@@ -132,8 +132,46 @@ public class UserInput {
                 }
                 break;
             case ROZHOVORSESTAROSTOUA_B:
+                break;
+            case ROZHOVORSESTAROSTOUB_A:
+                if (a == 0) {
+                    content.getStory("rozhovor se starostou B,A_A");
+                    buttons[2].setDisable(true);
+                    buttons[3].setDisable(true);
+                    buttons[4].setDisable(true);
+                    gameStatus = ROZHOVORSESTAROSTOUBA_A;
+                }
+
+                if (a == 1) {
+                    content.getStory("rozhovor se starostou B,A_B");
+                    buttons[2].setDisable(true);
+                    buttons[3].setDisable(true);
+                    buttons[4].setDisable(true);
+                    gameStatus = ROZHOVORSESTAROSTOUBA_B;
+                }
+                break;
+            case ROZHOVORSESTAROSTOUBA_B:
+                if (a == 0) {
+                    content.getStory("rozhovor se starostou B,A,B_A");
+                    buttons[0].setDisable(true);
+                    buttons[1].setDisable(true);
+                    buttons[2].setDisable(true);
+                    buttons[3].setDisable(true);
+                    buttons[4].setDisable(true);
+                    //konec hry
+                }
 
 
+            if (a == 1) {
+                content.getStory("rozhovor se starostou B,A,B_B");
+                buttons[0].setDisable(true);
+                buttons[1].setDisable(true);
+                buttons[2].setDisable(true);
+                buttons[3].setDisable(true);
+                buttons[4].setDisable(true);
+                //konec hry
+                break;
+            }
         }
 
 
