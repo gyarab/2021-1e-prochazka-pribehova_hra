@@ -1,6 +1,5 @@
 package com.example.rocnikovaprace;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -11,10 +10,9 @@ import static com.example.rocnikovaprace.Mainpart.*;
 
 public class UserInput {
 
+    public static Texts content = new Texts();
 
-    Texts content = new Texts();
-
-    GameStatus gameStatus = MENU;
+    GameStatus gameStatus = UVOD;
 
     public static String currentAnswer;
     String previousAnswer;
@@ -32,47 +30,29 @@ public class UserInput {
     public UserInput(){
         pane.getChildren().add(showMap);
         newStage.setScene(scena);
-        newStage.setMaxHeight(750);
-        newStage.setMaxWidth(750);
-        newStage.setMinHeight(750);
-        newStage.setMinWidth(750);
+        newStage.setResizable(false);
     }
     void showPreviousAnswer(){
 
         if (isShowingPrevAns ){
             content.writeStory(currentAnswer);
             previousButton.setText("minulý text");
-            isShowingPrevAns = false;
-            buttons[0].setStyle("-fx-border-color: #F7DA09; -fx-faint-focus-color: #F7DA09; -fx-focus-color: transparent");
-            buttons[1].setStyle("-fx-border-color: #7C09F7; -fx-faint-focus-color: #7C09F7; -fx-focus-color: transparent");
-            buttons[2].setStyle("-fx-border-color: #F709BA; -fx-faint-focus-color: #F709BA; -fx-focus-color: transparent");
+            for (int i = 0; i < buttons.length; i++){
+                buttons[i].setStyle(("-fx-border-color: #F7DA09; -fx-faint-focus-color: #F7DA09; -fx-focus-color: transparent"));
+            }
             for(int x = 0; x <buttons.length - buttonsDisabled; x++ ){
                 buttons[x].setDisable(false);
-
             }
+            isShowingPrevAns = false;
         }else {
             content.writeStory(previousAnswer);
             previousButton.setText("současný text");
-            switch (buttonSelected){
-                case 0:
-                    buttons[buttonSelected].setStyle("-fx-background-color: #F7DA09;-fx-border-color: #000000; ");
-                    break;
-                case 1:
-                    buttons[buttonSelected].setStyle("-fx-background-color: #7C09F7;-fx-border-color: #000000; ");
-                    break;
-                case 2:
-                    buttons[buttonSelected].setStyle("-fx-background-color: #F709BA;-fx-border-color: #000000; ");
-                    break;
-
-            }
-
-            for(int x = 0; x < buttons.length; x++){
+            buttons[buttonSelected].setStyle("-fx-background-color: #F7DA09;-fx-border-color: #000000; ");
+            for (int x = 0; x < buttons.length; x++) {
                 buttons[x].setDisable(true);
             }
             isShowingPrevAns = true;
         }
-
-
     }
 
     void showMap(double x, double y) {
@@ -97,17 +77,11 @@ public class UserInput {
         previousAnswer = currentAnswer;
 
         switch (gameStatus) {
-            case MENU:
-                if (a == 0) {
-                    content.getStory("Uvod");
-                    buttonsDisabled = 0;
-                    gameStatus = UVOD;
 
-                }
-                break;
             case UVOD:
                 if (a == 0) {
                     content.getStory("RozhovorSeStarostou");
+                    previousButton.setDisable(false);
                     buttonsDisabled = 0;
                     gameStatus = SPAT;
                 }
@@ -122,7 +96,34 @@ public class UserInput {
                     gameStatus = DVERE;
                 }
                 break;
-
+            case OKNO:
+                if (a == 0) {
+                    content.getStory("okno A");
+                    previousButton.setDisable(false);
+                    buttonsDisabled = 0;
+                    gameStatus = SPAT;
+                }
+                if (a == 1) {
+                    content.getStory("okno B");
+                    previousButton.setDisable(false);
+                    buttonsDisabled = 0;
+                    gameStatus = SPAT;
+                }
+                break;
+            case DVERE:
+                if (a == 0) {
+                    content.getStory("dvere A");
+                    previousButton.setDisable(false);
+                    buttonsDisabled = 0;
+                    gameStatus = SPAT;
+                }
+                if (a == 1) {
+                    content.getStory("dvere B");
+                    previousButton.setDisable(false);
+                    buttonsDisabled = 0;
+                    gameStatus = SPAT;
+                }
+                break;
             case SPAT:
                 if (a == 0) {
                     content.getStory("rozhovor se Starostou A");
@@ -140,28 +141,18 @@ public class UserInput {
                     gameStatus = KAPITOLA2;
                 }
                 break;
-            case OKNO:
+            case ROZHOVORSESTAROSTOUA:
                 if (a == 0) {
-                    content.getStory("okno A");
+                    content.getStory("rozhovor se starostou A_A");
                     buttonsDisabled = 0;
-                    gameStatus = SPAT;
+                    gameStatus = KAPITOLA2;
+
                 }
                 if (a == 1) {
-                    content.getStory("okno B");
+                    content.getStory("rozhovor se starostou A_B");
                     buttonsDisabled = 0;
-                    gameStatus = SPAT;
-                }
-                break;
-            case DVERE:
-                if (a == 0) {
-                    content.getStory("dvere A");
-                    buttonsDisabled = 0;
-                    gameStatus = SPAT;
-                }
-                if (a == 1) {
-                    content.getStory("dvere B");
-                    buttonsDisabled = 0;
-                    gameStatus = SPAT;
+                    gameStatus = KAPITOLA2;
+
                 }
                 break;
             case ROZHOVORSESTAROSTOUB:
@@ -176,21 +167,6 @@ public class UserInput {
                     gameStatus = ROZHOVORSESTAROSTOUB_B;
                 }
                 break;
-            case ROZHOVORSESTAROSTOUA:
-                if (a == 0) {
-                    content.getStory("rozhovor se starostou A_A");
-                    buttonsDisabled = 1;
-                    gameStatus = KAPITOLA2;
-
-                }
-                if (a == 1) {
-                    content.getStory("rozhovor se starostou A_B");
-                    buttonsDisabled = 1;
-                    gameStatus = KAPITOLA2;
-
-                }
-                break;
-
             case ROZHOVORSESTAROSTOUB_A:
                 if (a == 0) {
                     content.getStory("rozhovor se starostou B,A_A");
@@ -207,28 +183,25 @@ public class UserInput {
             case ROZHOVORSESTAROSTOUBA_B:
                 if (a == 0) {
                     content.getStory("rozhovor se starostou B,A,B_A");
-                    currentAnswer = "rozhovor se starostou B,A,B_A";
-                    buttonsDisabled = 3;
+                    buttonsDisabled = 0;
+                    gameStatus = GAMEOVER;
                     //konec hry
                 }
 
 
                 if (a == 1) {
                     content.getStory("rozhovor se starostou B,A,B_B");
-                    buttonsDisabled = 3;
+                    buttonsDisabled = 0;
+                    gameStatus = GAMEOVER;
                     //konec hry
-                    break;
-                }
-            case KAPITOLA2:
-                if (a == 0) {
-                }
-                if (a == 1) {
-                }
-                if (a == 2) {
                 }
                 break;
-
-
+            case KAPITOLA2:
+                    Mainpart.gameVisible(4);
+                break;
+            case GAMEOVER:
+                Mainpart.gameVisible(3);
+                break;
         }
         for (int i = 0; i < buttons.length; i++){
             buttons[i].setDisable(true);

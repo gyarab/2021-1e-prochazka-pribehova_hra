@@ -4,14 +4,14 @@ import java.util.HashMap;
 
 public class Texts {
     public void getStory(String name) {
-        writeStory(name);
+        Mainpart.text.setText(story.get(name));
         UserInput.currentAnswer = name;
     }
 
 
     public void writeStory(String name){
             Mainpart.text.setText(story.get(name));
-            System.out.println(story.get(name));
+
         }
 
 
@@ -20,13 +20,13 @@ public class Texts {
     public Texts() {
         story = new HashMap<String, String>();
 
-        story.put("Uvod", "Vzbudil jsi se z hlubokého spánku, ale stále se cítíš unaveně a především rozlámaně, protože jsi spal na dřevěné prkenné desce. Ale nejvíce tě bolí hlava zezadu. po chvíli bez výsledného vzpomínání co se stalo a proč jsi tady, se rozhlédneš kolem a zjistíš, že jsi v jakémsi vězení s jedním oknem s rezavými mřížemi a dřevěnými dveřmi. Velmi se podivíš při zjištění, že máš ruce od zaschlé krve." +
+        story.put("Uvod", "Vzbudil jsi se z hlubokého spánku, ale stále se cítíš unaveně a především rozlámaně, protože jsi spal na dřevěné prkenné desce. Ale nejvíce tě bolí hlava zezadu. po chvíli bez výsledného vzpomínání co se stalo a proč jsi tady, se rozhlédneš kolem a zjistíš, že jsi v jakémsi vězení s jedním oknem s rezavými mřížemi a dřevěnými dveřmi.Překvapí při zjištění, že máš ruce ušpiněné od zaschlé krve,ale jelikož si doktor,tak tě to nerozhodí.Vedle tvé “postele“ se nacházé malinkatý noční stolek s jakousi mapou,při pohledu na ni ji jasně rozeznáš, jedná se o mapu zdejších lučních ostrovů.„Doufám,že tady v té cele dlouho nebudu a navíc mít u sebe mapu se vždy hodí,“pomyslíš si a mapu sroluješ a strčíš si ji za opasek." +
                 "\n\n Co budeš dělat dál?" +
                 "\n\n A)  Půjdeš si lehnout.  " +
                 "\n\n B)  Prohlédneš si okno. " +
                 "\n\n C)  Prohlédneš si dveře.");
         story.put("RozhovorSeStarostou", "Usnul jsi a za chvíli tě vzbudí bušení na dveře. Během vteřiny se dveře rozletí a  dovnitř vrazí starosta města. Povídá : „ Doktore vy jste se teda zase předvedl !  Vždyť vy jste té stařence uřízl ruku. A uřízl byste jí i druhou kdyby vás nezastavil její syn, který vás přetáhl pánví po hlavě, pane Brown tohle se už nesmí opakovat! “\n" +
-                "Začneš si matně vybavovat,co se stalo:  Že jsi byl najat zdejším kuchařem , aby jsi vyléčil jeho matku od té nové nemoci zvané “hnilobná nákaza” . Nikdo neví jak se šíří ani jak se léčí, jediné co je všem moc dobře známo, je to , že když chorobu někdo chytí tak se mu ruce i nohy do týdne jakousi hnilobou rozpustí a za další týden umírá . Dokonce i mrtvé tělo se během týdne od úmrtí rozloží, jako kdyby tam leželo alespoň 6 měsíců. \n" +
+                "Začne se ti vracet pamět a ty si začneš vzpomínat:  Že jsi byl najat zdejším kuchařem , aby jsi vyléčil jeho matku od té nové nemoci zvané “hnilobná nákaza” . Nikdo neví jak se šíří ani jak se léčí, jediné co je všem moc dobře známo, je to , že když chorobu někdo chytí tak se mu ruce i nohy do týdne jakousi hnilobou rozpustí a za další týden umírá . Dokonce i mrtvé tělo se během týdne od úmrtí rozloží, jako kdyby tam leželo alespoň 6 měsíců. \n" +
                 "Proto jsi té stařence chtěl uříznout ruce , doufal jsi ,že když té staré paní odejmeš končetiny , třeba se zabrání postupu hniloby dál do těla. Ale nikdo neví jestli tohle je ta správná cesta jak “léčit” hnilobu. A proto tě její syn zastavil , v jeho očích se to zdálo jako hrozný a nelidský čin." +
                 "\n\n Co řekneš?" +
                 "\n\n A)  Neřekneš radši nic.  " +
@@ -38,7 +38,14 @@ public class Texts {
                 "\n\n B) Ne");
         story.put("okno A", "Vší silou jsi se pokusil je vytrhnout, ale ani se nepohnuly.\n" +
                 "V tom se dveře rozletí a  dovnitř vrazí starosta města. Povídá : „ Doktore, vy jste se teda zase předvedl !  Vždyť vy jste té stařence uřízl ruku. A uřízl byste jí i druhou kdyby vás nezastavil její syn, který vás přetáhl pánví po hlavě, pane Brown tohle se už nesmí opakovat! “\n" +
-                "Začneš si matně vybavovat,co se stalo:  Že jsi byl najat zdejším kuchařem , aby jsi vyléčil jeho matku od té nové nemoci zvané “hnilobná nákaza” . Nikdo neví jak se šíří ani jak se léčí, jediné co je všem moc dobře známo, je to , že když chorobu někdo chytí tak se mu ruce i nohy do týdne jakousi hnilobou rozpustí a za další týden umírá . Dokonce i mrtvé tělo se během týdne od úmrtí rozloží, jako kdyby tam leželo alespoň 6 měsíců. \n" +
+                "Začne se ti vracet pamět a ty si začneš vzpomínat:  Že jsi byl najat zdejším kuchařem , aby jsi vyléčil jeho matku od té nové nemoci zvané “hnilobná nákaza” . Nikdo neví jak se šíří ani jak se léčí, jediné co je všem moc dobře známo, je to , že když chorobu někdo chytí tak se mu ruce i nohy do týdne jakousi hnilobou rozpustí a za další týden umírá . Dokonce i mrtvé tělo se během týdne od úmrtí rozloží, jako kdyby tam leželo alespoň 6 měsíců. \n" +
+                "Proto jsi té stařence chtěl uříznout ruce , doufal jsi ,že když té staré paní odejmeš končetiny , třeba se zabrání postupu hniloby dál do těla. Ale nikdo neví jestli tohle je ta správná cesta jak “léčit” hnilobu. A proto tě její syn zastavil , v jeho očích se to zdálo jako hrozný a nelidský čin." +
+                "\n\n Co řekneš?" +
+                "\n\n A)  Neřekneš radši nic.  " +
+                "\n\n B)  Budeš se hájit, že to bylo  v zájmu vědy a pro její dobro." +
+                "\n\n C)  Omluvíš se a že už se to opakovat nebude.");
+        story.put("okno B", "V tom se dveře rozletí a  dovnitř vrazí starosta města. Povídá : „ Doktore, vy jste se teda zase předvedl !  Vždyť vy jste té stařence uřízl ruku. A uřízl byste jí i druhou kdyby vás nezastavil její syn, který vás přetáhl pánví po hlavě, pane Brown tohle se už nesmí opakovat! “\n" +
+                "Začne se ti vracet pamět a ty si začneš vzpomínat ,co se stalo:  Že jsi byl najat zdejším kuchařem , aby jsi vyléčil jeho matku od té nové nemoci zvané “hnilobná nákaza” . Nikdo neví jak se šíří ani jak se léčí, jediné co je všem moc dobře známo, je to , že když chorobu někdo chytí tak se mu ruce i nohy do týdne jakousi hnilobou rozpustí a za další týden umírá . Dokonce i mrtvé tělo se během týdne od úmrtí rozloží, jako kdyby tam leželo alespoň 6 měsíců. \n" +
                 "Proto jsi té stařence chtěl uříznout ruce , doufal jsi ,že když té staré paní odejmeš končetiny , třeba se zabrání postupu hniloby dál do těla. Ale nikdo neví jestli tohle je ta správná cesta jak “léčit” hnilobu. A proto tě její syn zastavil , v jeho očích se to zdálo jako hrozný a nelidský čin." +
                 "\n\n Co řekneš?" +
                 "\n\n A)  Neřekneš radši nic.  " +
@@ -50,22 +57,15 @@ public class Texts {
                 "\n\n B) Ne");
         story.put("dvere A", "Rozběhl si se vší silou proti dveřím, ale ty se ani nepohnuly , akorát se ozvala dunivá rána.\n" +
                 "Najednou uslyšíš blížící se kroky za dveřmi a  během vteřiny se dveře rozletí a  dovnitř vrazí starosta města. Povídá : „ Doktore, snad jste nechtěl utéct ? A taky jste se teda zase předvedl !  Vždyť vy jste té stařence uřízl ruku. A uřízl byste jí i druhou kdyby vás nezastavil její syn, který vás přetáhl pánví po hlavě, pane Brown tohle se už nesmí opakovat! “\n" +
-                "Začneš si matně vybavovat,co se stalo:  Že jsi byl najat zdejším kuchařem , aby jsi vyléčil jeho matku od té nové nemoci zvané “hnilobná nákaza” . Nikdo neví jak se šíří ani jak se léčí, jediné co je všem moc dobře známo, je to , že když chorobu někdo chytí tak se mu ruce i nohy do týdne jakousi hnilobou rozpustí a za další týden umírá . Dokonce i mrtvé tělo se během týdne od úmrtí rozloží, jako kdyby tam leželo alespoň 6 měsíců. \n" +
+                "Začne se ti vracet pamět a ty si začneš vzpomínat:  Že jsi byl najat zdejším kuchařem , aby jsi vyléčil jeho matku od té nové nemoci zvané “hnilobná nákaza” . Nikdo neví jak se šíří ani jak se léčí, jediné co je všem moc dobře známo, je to , že když chorobu někdo chytí tak se mu ruce i nohy do týdne jakousi hnilobou rozpustí a za další týden umírá . Dokonce i mrtvé tělo se během týdne od úmrtí rozloží, jako kdyby tam leželo alespoň 6 měsíců. \n" +
                 "Proto jsi té stařence chtěl uříznout ruce , doufal jsi ,že když té staré paní odejmeš končetiny , třeba se zabrání postupu hniloby dál do těla. Ale nikdo neví jestli tohle je ta správná cesta jak “léčit” hnilobu. A proto tě její syn zastavil , v jeho očích se to zdálo jako hrozný a nelidský čin\n" +
                 "\n\n Co řekneš?" +
                 "\n\n A)  Neřekneš radši nic.  " +
                 "\n\n B)  Budeš se hájit, že to bylo  v zájmu vědy a pro její dobro." +
                 "\n\n C)  Omluvíš se a že už se to opakovat nebude.");
         story.put("dvere B", "V tom se dveře rozletí a  dovnitř vrazí starosta města. Povídá : „ Doktore, vy jste se teda zase předvedl !  Vždyť vy jste té stařence uřízl ruku. A uřízl byste jí i druhou kdyby vás nezastavil její syn, který vás přetáhl pánví po hlavě, pane Brown tohle se už nesmí opakovat! “\n" +
-                "Začneš si matně vybavovat,co se stalo:  Že jsi byl najat zdejším kuchařem , aby jsi vyléčil jeho matku od té nové nemoci zvané “hnilobná nákaza” . Nikdo neví jak se šíří ani jak se léčí, jediné co je všem moc dobře známo, je to , že když chorobu někdo chytí tak se mu ruce i nohy do týdne jakousi hnilobou rozpustí a za další týden umírá . Dokonce i mrtvé tělo se během týdne od úmrtí rozloží, jako kdyby tam leželo alespoň 6 měsíců. \n" +
+                "Začne se ti vracet pamět a ty si začneš vzpomínat:  Že jsi byl najat zdejším kuchařem , aby jsi vyléčil jeho matku od té nové nemoci zvané “hnilobná nákaza” . Nikdo neví jak se šíří ani jak se léčí, jediné co je všem moc dobře známo, je to , že když chorobu někdo chytí tak se mu ruce i nohy do týdne jakousi hnilobou rozpustí a za další týden umírá . Dokonce i mrtvé tělo se během týdne od úmrtí rozloží, jako kdyby tam leželo alespoň 6 měsíců. \n" +
                 "Proto jsi té stařence chtěl uříznout ruce , doufal jsi ,že když té staré paní odejmeš končetiny , třeba se zabrání postupu hniloby dál do těla. Ale nikdo neví jestli tohle je ta správná cesta jak “léčit” hnilobu. A proto tě její syn zastavil , v jeho očích se to zdálo jako hrozný a nelidský čin.\n" +
-                "\n\n Co řekneš?" +
-                "\n\n A)  Neřekneš radši nic.  " +
-                "\n\n B)  Budeš se hájit, že to bylo  v zájmu vědy a pro její dobro." +
-                "\n\n C)  Omluvíš se a že už se to opakovat nebude.");
-        story.put("okno B", "V tom se dveře rozletí a  dovnitř vrazí starosta města. Povídá : „ Doktore, vy jste se teda zase předvedl !  Vždyť vy jste té stařence uřízl ruku. A uřízl byste jí i druhou kdyby vás nezastavil její syn, který vás přetáhl pánví po hlavě, pane Brown tohle se už nesmí opakovat! “\n" +
-                "Začneš si matně vybavovat,co se stalo:  Že jsi byl najat zdejším kuchařem , aby jsi vyléčil jeho matku od té nové nemoci zvané “hnilobná nákaza” . Nikdo neví jak se šíří ani jak se léčí, jediné co je všem moc dobře známo, je to , že když chorobu někdo chytí tak se mu ruce i nohy do týdne jakousi hnilobou rozpustí a za další týden umírá . Dokonce i mrtvé tělo se během týdne od úmrtí rozloží, jako kdyby tam leželo alespoň 6 měsíců. \n" +
-                "Proto jsi té stařence chtěl uříznout ruce , doufal jsi ,že když té staré paní odejmeš končetiny , třeba se zabrání postupu hniloby dál do těla. Ale nikdo neví jestli tohle je ta správná cesta jak “léčit” hnilobu. A proto tě její syn zastavil , v jeho očích se to zdálo jako hrozný a nelidský čin." +
                 "\n\n Co řekneš?" +
                 "\n\n A)  Neřekneš radši nic.  " +
                 "\n\n B)  Budeš se hájit, že to bylo  v zájmu vědy a pro její dobro." +
